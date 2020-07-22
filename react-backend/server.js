@@ -35,8 +35,16 @@ app.get("/api/products/:id", async (req, res) => {
 
 })
 
-
-
+app.post('/submission', (req, res) => {
+ var myData = new Products(req.body);
+ myData.save()
+   .then(item => {
+     res.send("item saved to database");
+   })
+   .catch(err => {
+     res.status(400).send("unable to save to database");
+   });
+});
 
 const uri = process.env.MONGODB_URL;
 mongoose.connect('mongodb+srv://tlXx04pN5TdI:tlXx04pN5TdI@cluster0.ulvxj.mongodb.net/ecommerce?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});

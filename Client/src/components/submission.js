@@ -9,7 +9,7 @@ function submission() {
              <div id='topContainer'>
              <h1>Submission Form</h1>
              <div id='mainContainer'>
-            <form action="post">
+            <form  action="/submission" method="Post">
             
             <label>Product Brand</label>
             <input type='text'  />
